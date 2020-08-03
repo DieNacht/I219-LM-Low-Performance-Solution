@@ -17,7 +17,7 @@ dkms build -m e1000e -v 3.8.4
 dkms install -m e1000e -v 3.8.4
 cat << EOF > /usr/lib/networkd-dispatcher/routable.d/10-disable-offloading
 #!/bin/sh
-ethtool -K enp0s31f6 tso off gso off
+ethtool -K $(ip -o -4 route show to default | awk '{print $5}') tso off gso off
 EOF
 chmod 755 /usr/lib/networkd-dispatcher/routable.d/10-disable-offloading
 reboot
