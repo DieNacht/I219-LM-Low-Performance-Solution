@@ -4,6 +4,7 @@
 # Author: DieNacht
 #
 # Thanks to QSS
+# https://blog.gloriousdays.pw/2020/07/20/intel-i219-lm-performance-issue-and-mitigation/
 
 apt -y update
 apt -y install git build-essential dkms networkd-dispatcher ethtool
